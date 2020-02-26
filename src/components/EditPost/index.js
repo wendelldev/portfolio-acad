@@ -5,10 +5,6 @@ import Header from '../Header'
 import {
     TextField, InputAdornment
 } from '@material-ui/core'
-import {
-    Title
-} from '@material-ui/icons'
-
 
 const config = {
     readonly: false
@@ -21,8 +17,6 @@ class EditPost extends React.Component {
     }
 
     render() {
-
-        const { classes } = this.props 
 
         return (
             <>
