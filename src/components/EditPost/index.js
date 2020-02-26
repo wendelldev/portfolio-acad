@@ -28,6 +28,7 @@ class EditPost extends React.Component {
                     id='title-input'
                     label='Título'
                     fullWidth
+                    color='secondary'
                     onChange={newContent => this.setState({ postTitle: newContent })}
                     />
                 </div>
