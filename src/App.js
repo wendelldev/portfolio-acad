@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import ProtectedRoute from './components/ProtectedRoute'
 import Home from './components/Home'
 import Login from './components/Login'
+import EditPost from './components/EditPost'
 
 
 function App(props) {
@@ -15,6 +16,12 @@ function App(props) {
       <ProtectedRoute
         exact path='/'
         component={Home}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+        />
+      <ProtectedRoute
+        exact path='/edition'
+        component={EditPost}
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
         />

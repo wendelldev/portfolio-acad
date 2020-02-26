@@ -11,8 +11,6 @@ import {
 } from '@material-ui/icons'
 
 
-import './styles.css'
-
 const styles = () => ({
     '@global': {
         body: {
@@ -74,7 +72,6 @@ const styles = () => ({
 })
 
 
-
 class Login extends React.Component {
     state = { email: '', password: '', hidden: true }
 
@@ -90,7 +87,6 @@ class Login extends React.Component {
         e.preventDefault()
         const { dispatch } = this.props
         const { email, password } = this.state
-        console.log('Submit')
 
         dispatch(loginUser(email, password))
     }
