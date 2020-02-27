@@ -122,8 +122,11 @@ class EditPost extends React.Component {
                         Publish
                     </Button>
                     <ButtonModal
+                        img={this.state.imageUrl}
                         title={this.state.postTitle}
-                        local={this.state.local} />
+                        date={this.state.date.toLocaleDateString()}
+                        local={this.state.local}
+                        content={this.state.postContent} />
                 </Grid>
             </div>
             </>

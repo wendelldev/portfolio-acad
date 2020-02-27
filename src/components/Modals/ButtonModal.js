@@ -1,6 +1,8 @@
 import React from 'react'
 import { Modal, Backdrop, Fade, Button } from '@material-ui/core'
 
+import './styles.css'
+
 
 class ButtonModal extends React.Component {
     state = {
@@ -34,8 +36,20 @@ class ButtonModal extends React.Component {
                    >
                      <Fade in={this.state.open}>
                        <div className='paper'>
-                         <h2 id="transition-modal-title">{this.props.title}</h2>
-                         <p id="transition-modal-description">{this.props.local}</p>
+                         <div className="img-principal" 
+                          style={{background: `url(${this.props.img}) no-repeat cover` }}>
+                           
+                         </div>
+                         <div className="title-area">
+                           <h2 className='title'>{this.props.title}</h2>
+                         </div>
+                         <div className="info-area">
+                           <p className="date">{this.props.date}</p>
+                           <p className="local">{this.props.local}</p>
+                         </div>
+                         <div className='post-content'>
+                           {this.props.content}
+                         </div>
                        </div>
                      </Fade>
                    </Modal>

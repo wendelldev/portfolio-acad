@@ -1,0 +1,22 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paper {
+    width: 60vw;
+    height: 90vh;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    outline: 0;
+}
+
+
+
+
+.img-principal {
+    width: auto;
+    height: auto;
+}
