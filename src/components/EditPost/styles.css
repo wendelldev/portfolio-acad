@@ -1,0 +1,60 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.form-post-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.post-title-box {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#local-input {
+    margin-top: 7px;
+    width: 800px;
+}
+
+.input-url-img {
+    width: 100%;
+    margin: 10px auto;
+}
+
+#img-input {
+    width: 800px;
+}
+
+
+
+.container-editor {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+.title-editor {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.btn-box {
+    margin-top: 30px;
+}
+
+.btn.publish, .btn.view {
+    background-color: #233c62;
+    color: white;
+}
+
+.btn.publish:hover, .btn.view:hover {
+    background-color: #1e90ff;
+}

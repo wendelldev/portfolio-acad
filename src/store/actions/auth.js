@@ -75,7 +75,6 @@ export const loginUser = (email, password) => dispatch => {
     dispatch(requestLogin())
     myFirebase.auth().signInWithEmailAndPassword(email, password)
         .then(user => {
-            console.log(user)
             dispatch(receiveLogin(user)) 
         })
         .catch(error => {
