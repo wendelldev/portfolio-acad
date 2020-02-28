@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
+    max-width: 70%;
     margin: 0 auto;
 }
 
@@ -23,21 +23,22 @@
     width: 800px;
 }
 
-.input-url-img {
-    width: 100%;
-    margin: 10px auto;
-}
-
 #img-input {
-    width: 800px;
+    min-width: 700px;
 }
 
-
+.input-size, .input-position, .input-repeat {
+    width: 120px;
+}
 
 .container-editor {
     width: 100%;
     height: auto;
     margin-top: 30px;
+}
+
+.container-editor .jodit_container .jodit_workplace .jodit_wysiwyg {
+    padding: 40px;
 }
 
 .title-editor {
@@ -48,13 +49,14 @@
 
 .btn-box {
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-.btn.publish, .btn.view {
+.btn.publish {
     background-color: #233c62;
     color: white;
 }
 
-.btn.publish:hover, .btn.view:hover {
+.btn.publish:hover {
     background-color: #1e90ff;
 }

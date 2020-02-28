@@ -10,7 +10,6 @@ export const LOGOUT_FAILURE = "LOGOUT_FAILURE"
 export const VERIFY_REQUEST = "VERIFY_REQUEST"
 export const VERIFY_SUCCESS = "VERIFY_SUCCESS"
 
-export const ADD_POST = 'ADD_POST'
 
 
 // Login actions
@@ -64,12 +63,6 @@ const verifySucess = () => {
     }
 }
 
-const addPost = post => {
-    return {
-        type: ADD_POST,
-        payload: post
-    }
-}
 
 export const loginUser = (email, password) => dispatch => {
     dispatch(requestLogin())

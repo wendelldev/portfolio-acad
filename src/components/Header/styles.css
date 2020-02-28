@@ -44,8 +44,6 @@ header.header {
 
 .header .nav-area .link:hover {
     font-weight: bold;
-    font-size: 13px;
-    padding-bottom: 6px;
 } 
 
 .header .nav-area .link.link-active {
