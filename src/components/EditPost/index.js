@@ -1,13 +1,13 @@
 import React from 'react'
 import JoditEditor from 'jodit-react'
 import Header from '../Header'
-import ButtonModal from '../Modals/ButtonModal'
+import ButtonModal from '../Modals/ButtonViewModal'
 import DateFnsUtils from '@date-io/date-fns'
 import { db } from '../../store/firebase/firebase'
 
 
 import {
-    TextField, Grid, Button, InputLabel, MenuItem,  FormControl, Select
+    TextField, Grid, Button, InputLabel, MenuItem, FormControl, Select
 } from '@material-ui/core'
 
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers'

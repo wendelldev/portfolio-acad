@@ -1,0 +1,40 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paper {
+    width: 50vw;
+    height: 90vh;
+    background-color: #fff;
+    padding: 8px;
+    outline: 0;
+    border-radius: 8px;
+}
+
+.img-principal {
+    width: 98%;
+    height: 350px;
+    margin: 10px auto;
+}
+
+.title-area {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.info-area {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    text-align: center;
+}
+
+.post-content {
+    width: 95%;
+    max-height: 200px;
+    margin: 30px auto;
+    position: relative;
+    
+}
