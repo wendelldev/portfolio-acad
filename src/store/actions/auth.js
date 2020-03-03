@@ -1,4 +1,5 @@
 import { myFirebase } from '../firebase/firebase'
+import axios from 'axios'
 
 
 export const LOGIN_REQUEST = "LOGIN_REQUEST"
@@ -9,6 +10,7 @@ export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS"
 export const LOGOUT_FAILURE = "LOGOUT_FAILURE"
 export const VERIFY_REQUEST = "VERIFY_REQUEST"
 export const VERIFY_SUCCESS = "VERIFY_SUCCESS"
+export const SET_POSTS = "SET_POSTS"
 
 
 
@@ -64,11 +66,38 @@ const verifySucess = () => {
 }
 
 
+const setPosts = posts => {
+    return {
+        type: SET_POSTS,
+        payload: posts
+    }
+}
+
+export const fetchPosts = () => {
+    return dispatch => {
+        axios.get('/posts.json')
+            .catch(err => console.log(err))
+            .then(res => {
+                const rawPosts = res.data
+                const posts = []
+                for (let key in rawPosts) {
+                    posts.push({
+                        ...rawPosts[key],
+                        id: key
+                    })
+                }
+
+                dispatch(setPosts(posts))
+            })
+    }
+}
+
+
 export const loginUser = (email, password) => dispatch => {
     dispatch(requestLogin())
     myFirebase.auth().signInWithEmailAndPassword(email, password)
         .then(user => {
-            dispatch(receiveLogin(user)) 
+            dispatch(receiveLogin(user))
         })
         .catch(error => {
             // Pensar em algo caso ocorra erro
@@ -97,4 +126,12 @@ export const verifyAuth = () => dispatch => {
         }
         dispatch(verifySucess())
     })
+}
+
+export const addPost = post => {
+    return dispatch => {
+        axios.post('/posts.json', { ...post })
+            .catch(err => console.log(err))
+            .then(res => console.log(res.data))
+    }
 }

@@ -18,12 +18,12 @@ class CardPostModal extends React.Component {
     render() {
         return (
             <div>
-                <div className='card' onClick={this.handleOpenClose}>
-                    <div className='card-header' style={{
-                        backgroundImage: `url(${this.props.post.imgUrl})`, backgroundSize: 'contain', backgroundPosition: 'center'
+                <div className='card' onClick={this.handleOpenClose} style={{
+                        backgroundImage: `url(${this.props.post.imageUrl})`, backgroundSize: `${this.props.post.size}`, backgroundPosition: `${this.props.post.position}`, backgroundRepeat: `${this.props.post.repeat}`
                     }}>
+                    <div className='card-header'>
                         <h2>{this.props.post.title}</h2>
-                        <p>{this.props.post.date} - {this.props.post.local}</p>
+                        <p>{this.props.post.date.toLocaleString()} - {this.props.post.local}</p>
                     </div>
                 </div>
                 <Modal
@@ -42,17 +42,17 @@ class CardPostModal extends React.Component {
                       <section className='paper'>
                         <PerfectScrollbar>
                           <div className="img-principal" 
-                              style={{backgroundImage: `url(${this.props.post.imgUrl})`, backgroundSize: `${this.props.post.size}`, backgroundPosition: `${this.props.post.position}`, backgroundRepeat: `${this.props.post.repeat}` }}>
+                              style={{backgroundImage: `url(${this.props.post.imageUrl})`, backgroundSize: `${this.props.post.size}`, backgroundPosition: `${this.props.post.position}`, backgroundRepeat: `${this.props.post.repeat}` }}>
                           </div>
                           <div className="title-area">
                             <h2 className='title'>{this.props.post.title}</h2>
                           </div>
                           <div className="info-area">
-                            <p className="date">{this.props.post.date}</p>
+                            <p className="date">{this.props.post.date.toLocaleString()}</p>
                             <p className="local">{this.props.post.local}</p>
                           </div>
                           <div className='post-content'>
-                            <Markup content={this.props.post.content} />
+                            <Markup content={this.props.post.contentPost} />
                           </div>
                         </PerfectScrollbar>
                        </section>

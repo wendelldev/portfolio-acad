@@ -16,7 +16,7 @@ class Header extends React.Component {
                 <div className="nav-area">
                     {current === 'home' ? <Link className='link link-active' to='/'>Home</Link> : <Link className='link' to='/'>Home</Link>}
                     {current === 'diary' ? <Link className='link link-active' to='/diary'>Diário</Link> : <Link className='link' to='/diary'>Diário</Link>}
-                   {current === 'about' ? <Link className='link link-active' to='/about'>Sobre</Link> : <Link className='link' to='/about'>Sobre</Link>}
+                    {current === 'about' ? <Link className='link link-active' to='/about'>Sobre</Link> : <Link className='link' to='/about'>Sobre</Link>}
                     {isAuthenticated ?  current === 'edition' ? <Link className='link link-active' to='/edition'>Edição</Link> : <Link className='link' to='/edition'>Edição</Link>
                         : console.log('nada')}
                 </div>

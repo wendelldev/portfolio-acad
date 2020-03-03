@@ -1,28 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { logoutUser } from "../../store/actions";
-import { db } from '../../store/firebase/firebase'
+import { logoutUser, fetchPosts } from "../../store/actions";
 
 import Header from '../Header'
+import CardPostModal from '../Modals/CardPostModal'
 
 import './styles.css'
 
 
 class Home extends Component {
 
-  state = {
-    posts: []
-  }
-
-  componentDidMount = async () => {
-    let postsRef = db.collection('posts')
-    let allPosts = postsRef.get()
-      .then(posts => {
-        this.setState({ posts })
-      })
-      .catch(err => {
-        console.log('Error getting documents', err)
-      })
+  componentDidMount = () => {
+    this.props.onFetchPosts()
   }
 
   handleLogout = () => {
@@ -32,28 +21,36 @@ class Home extends Component {
 
 
   render() {
-    const { isLoggingOut, logoutError } = this.props
+    const { posts } = this.props
     return (
       <>
       <Header current='home' />
       <div>
-        {this.state.posts.forEach(post => {
-          console.log(post.title)
-        })}
-        {/* <h1>This is your app's protected area.</h1>
-        <p>Any routes here will also be protected</p>
-        <button onClick={this.handleLogout}>Logout</button>
-        {isLoggingOut && <p>Is loginOut</p>}
-        {logoutError && <p>Error logging out</p>} */}
+        <section className='grid-posts'>
+          <ul className='posts'>
+            {posts.map(post => 
+              <li key={post.id}><CardPostModal post={post} /></li>
+            )}
+          </ul>
+        </section>
       </div>
       </>
     );
   }
 }
-function mapStateToProps(state) {
+
+const mapStateToProps = state => {
   return {
     isLoggingOut: state.auth.isLoggingOut,
-    logoutError: state.auth.logoutError
+    logoutError: state.auth.logoutError,
+    posts: state.auth.posts
   };
 }
-export default connect(mapStateToProps)(Home);
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onFetchPosts: () => dispatch(fetchPosts())
+  }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps)(Home);

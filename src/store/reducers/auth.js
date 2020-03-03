@@ -1,7 +1,7 @@
 import {
     LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE,
     LOGOUT_REQUEST, LOGOUT_SUCCESS, LOGOUT_FAILURE,
-    VERIFY_REQUEST, VERIFY_SUCCESS
+    VERIFY_REQUEST, VERIFY_SUCCESS, SET_POSTS
 } from "../actions"
 
 export default (
@@ -12,7 +12,8 @@ export default (
         loginError: false,
         logoutError: false,
         isAuthenticated: false,
-        user: {}
+        user: {},
+        posts: []
     },
     action // parametro action
     ) => {
@@ -66,6 +67,11 @@ export default (
                 return {
                     ...state,
                     isVerifying: false
+                };
+            case SET_POSTS:
+                return {
+                    ...state,
+                    posts: action.payload
                 };
             default:
                 return state;
