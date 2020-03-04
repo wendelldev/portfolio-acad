@@ -11,6 +11,8 @@ export const LOGOUT_FAILURE = "LOGOUT_FAILURE"
 export const VERIFY_REQUEST = "VERIFY_REQUEST"
 export const VERIFY_SUCCESS = "VERIFY_SUCCESS"
 export const SET_POSTS = "SET_POSTS"
+export const CREATING_POST = "CREATING_POST"
+export const POST_CREATED = "POST_CREATED"
 
 
 
@@ -73,6 +75,18 @@ const setPosts = posts => {
     }
 }
 
+export const creatingPost = () => {
+    return {
+        type: CREATING_POST
+    }
+}
+
+export const postCreated = () => {
+    return {
+        type: POST_CREATED
+    }
+}
+
 export const fetchPosts = () => {
     return dispatch => {
         axios.get('/posts.json')
@@ -87,7 +101,7 @@ export const fetchPosts = () => {
                     })
                 }
 
-                dispatch(setPosts(posts))
+                dispatch(setPosts(posts.reverse()))
             })
     }
 }
@@ -130,8 +144,12 @@ export const verifyAuth = () => dispatch => {
 
 export const addPost = post => {
     return dispatch => {
+        dispatch(creatingPost())
         axios.post('/posts.json', { ...post })
             .catch(err => console.log(err))
-            .then(res => console.log(res.data))
+            .then(res => {
+                dispatch(fetchPosts())
+                dispatch(postCreated())
+            })
     }
 }
