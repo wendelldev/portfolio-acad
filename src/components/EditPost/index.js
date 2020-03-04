@@ -36,6 +36,23 @@ class EditPost extends React.Component {
         redirect: false
     }
 
+    componentDidUpdate = prevProps => {
+        if (prevProps.loading && !this.props.loading) {
+            this.setState({
+                postTitle: '',
+                date: new Date(),
+                local: '',
+                imageUrl: '',
+                postContent: '',
+                size: '',
+                position: '',
+                repeat: '',
+            })
+
+            this.setState({ redirect: true })
+        }
+    }
+
     handleOpenMenu = () => {
         this.setState({ open: !this.state.open })
     }
@@ -84,8 +101,6 @@ class EditPost extends React.Component {
             repeat,
             contentPost: postContent
         })
-
-        this.setState({ redirect: true })
     }
 
     render() {
@@ -202,6 +217,7 @@ class EditPost extends React.Component {
                         <Button className='btn publish'
                             type='button'
                             variant='contained'
+                            disabled={this.props.loading}
                             onClick={this.handlePublish}>
                             Publish
                         </Button>
@@ -224,10 +240,16 @@ class EditPost extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        loading: state.auth.isUploading
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         onAddPost: post => dispatch(addPost(post))
     }
 }
 
-export default connect(null, mapDispatchToProps)(EditPost)
+export default connect(mapStateToProps, mapDispatchToProps)(EditPost)
