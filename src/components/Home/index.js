@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { logoutUser, fetchPosts } from "../../store/actions";
 
-import Header from '../Header'
 import CardPostModal from '../Modals/CardPostModal'
 
 import './styles.css'
@@ -23,8 +22,6 @@ class Home extends Component {
   render() {
     const { posts } = this.props
     return (
-      <>
-      <Header current='home' />
       <div>
         <section className='grid-posts'>
           <ul className='posts'>
@@ -34,7 +31,6 @@ class Home extends Component {
           </ul>
         </section>
       </div>
-      </>
     );
   }
 }

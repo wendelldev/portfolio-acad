@@ -1,41 +1,29 @@
-import React from 'react';
+import React from 'react'
 
-import { Route, Switch } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import ProtectedRoute from './components/ProtectedRoute'
-import Home from './components/Home'
-import Login from './components/Login'
-import EditPost from './components/EditPost'
+import Routes from './routes'
+import Header from './components/Header'
+import configureStore from './store/configureStore'
 
+import axios from 'axios'
 
-function App(props) {
-  const { isAuthenticated, isVerifying } = props
-  return (
-    <Switch>
-      <ProtectedRoute
-        exact path='/'
-        component={Home}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-        />
-      <ProtectedRoute
-        exact path='/edition'
-        component={EditPost}
-        isAuthenticated={isAuthenticated}
-        isVerifying={isVerifying}
-        />
-        <Route path='/login' component={Login} />
-    </Switch>
-  )
+axios.defaults.baseURL = 'https://portfolio-acad.firebaseio.com/'
+
+const store = configureStore()
+
+function App () {
+    return (
+            <Router>
+                <Provider store={store}>
+                    <>
+                        <Header />
+                        <Routes />
+                    </>
+                </Provider>
+            </Router>
+    )
 }
 
-
-function mapStateToProps(state) {
-  return {
-    isAuthenticated: state.auth.isAuthenticated,
-    isVerifying: state.auth.isVerifying
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App

@@ -92,16 +92,20 @@ export const fetchPosts = () => {
         axios.get('/posts.json')
             .catch(err => console.log(err))
             .then(res => {
-                const rawPosts = res.data
-                const posts = []
-                for (let key in rawPosts) {
-                    posts.push({
-                        ...rawPosts[key],
-                        id: key
-                    })
-                }
+                try {
+                    const rawPosts = res.data
+                    const posts = []
+                    for (let key in rawPosts) {
+                        posts.push({
+                            ...rawPosts[key],
+                            id: key
+                        })
+                    }
 
-                dispatch(setPosts(posts.reverse()))
+                    dispatch(setPosts(posts.reverse()))
+                    } catch(err) {
+                        console.log(err)
+                    }
             })
     }
 }

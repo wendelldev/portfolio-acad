@@ -1,24 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { logoutUser } from '../../store/actions'
 
 import './styles.css'
 
 
 class Header extends React.Component {
+
+    handleLogout = (e) => {
+        e.preventDefault()
+        const { dispatch } = this.props
+        
+        dispatch(logoutUser())
+    }
+
     render() {
-        const {isAuthenticated, current} = this.props
+        const {isAuthenticated} = this.props
         return (
             <header className="header">
                 <div className="logo-area">
                     <h2 className="logo-name">Wendell Lucena</h2>
                 </div>
                 <div className="nav-area">
-                    {current === 'home' ? <Link className='link link-active' to='/'>Home</Link> : <Link className='link' to='/'>Home</Link>}
-                    {current === 'diary' ? <Link className='link link-active' to='/diary'>Diário</Link> : <Link className='link' to='/diary'>Diário</Link>}
-                    {current === 'about' ? <Link className='link link-active' to='/about'>Sobre</Link> : <Link className='link' to='/about'>Sobre</Link>}
-                    {isAuthenticated ?  current === 'edition' ? <Link className='link link-active' to='/edition'>Edição</Link> : <Link className='link' to='/edition'>Edição</Link>
-                        : console.log('nada')}
+                    <Link className='link' to='/'>Home</Link>
+                    <Link className='link' to='/diary'>Diário</Link>
+                    <Link className='link' to='/about'>Sobre</Link>
+                    <Link className='link' to='/edition'>Edição</Link>
+                    {isAuthenticated ? <Link className='btn-logout' to='/login' onClick={this.handleLogout}>Logout</Link> : <Link className='btn-login' to='/login'>Login</Link>}
                 </div>
             </header>
         )

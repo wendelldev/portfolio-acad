@@ -1,6 +1,5 @@
 import React from 'react'
 import JoditEditor from 'jodit-react'
-import Header from '../Header'
 import ButtonModal from '../Modals/ButtonViewModal'
 import DateFnsUtils from '@date-io/date-fns'
 
@@ -110,8 +109,6 @@ class EditPost extends React.Component {
             )
         } else {
             return (
-                <>
-                <Header current='edition' />
                 <div className='form-post-edit'>
                     <div className='post-title-box'>
                         <TextField
@@ -234,7 +231,6 @@ class EditPost extends React.Component {
                             content={this.state.postContent} />
                     </Grid>
                 </div>
-                </>
             )
         }
     }
