@@ -1,3 +1,7 @@
+:root {
+    --font-default: 'Roboto', sans-serif;
+}
+
 header.header {
     display: flex;
     flex-direction: row;
@@ -17,12 +21,15 @@ header.header {
     flex: 1;
 }
 
+.header .logo-area .logo {
+    width: 40px;
+    height: 38px;
+}
+
 .header .logo-area .logo-name {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    background-color: white;
-    padding: 5px;
-    border-radius: 3px;
+    font-family: var(--font-default);
+    font-size: 15px;
+    color: white;
 }
 
 .header .nav-area {
@@ -34,8 +41,8 @@ header.header {
 }
 
 .header .nav-area .link {
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-family: var(--font-default);
+    font-size: 11px;
     color: white;
     margin: 0 10px;
     padding: 5px;
@@ -44,10 +51,34 @@ header.header {
 
 .header .nav-area .link:hover {
     font-weight: bold;
-} 
+}
 
-.header .nav-area .link.link-active {
+.header .nav-area .link.active {
     font-weight: bold;
-    font-size: 13px;
+    font-size: 12px;
     padding-bottom: 6px;
+}
+
+.btn-login {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: var(--font-default);
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.btn-logout {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: var(--font-default);
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 10px;
 }

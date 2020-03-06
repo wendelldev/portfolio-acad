@@ -21,7 +21,7 @@ const styles = () => ({
     },
     container: {
         display: 'flex',
-        marginTop: 150,
+        marginTop: 100,
         justifyContent: 'center'
     },
     card: {
