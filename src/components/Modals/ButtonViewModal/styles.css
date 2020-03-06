@@ -4,6 +4,10 @@
     justify-content: center;
 }
 
+.modal-button:hover {
+    background-color: #1e90ff !important;
+}
+
 .paper {
     width: 50vw;
     height: 90vh;
@@ -30,8 +34,6 @@
     align-items: center;
     text-align: center;
 }
-
-
 
 
 .post-content {

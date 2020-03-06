@@ -16,12 +16,12 @@ const styles = () => ({
         body: {
             backgroundImage: "url('https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
             backgroundSize: 'cover',
-            backgroundRepeat: 'repeat-y'
+            backgroundRepeat: 'repeat-y',
         }
     },
     container: {
         display: 'flex',
-        marginTop: 100,
+        marginTop: 180,
         justifyContent: 'center'
     },
     card: {

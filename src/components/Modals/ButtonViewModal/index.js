@@ -23,7 +23,7 @@ class ButtonModal extends React.Component {
                     variant='contained'
                     style={{
                       backgroundColor: `${this.props.background}`, 
-                      color: `${this.props.color}`,
+                      color: `${this.props.color}`
                       }}
                     onClick={this.handleOpenClose}>
                         View

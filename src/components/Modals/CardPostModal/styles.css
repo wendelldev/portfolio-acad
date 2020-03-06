@@ -1,7 +1,11 @@
+
+:root {
+    --font-default: 'Roboto', sans-serif;
+}
+
 .card {
-    width: 250px;
-    height: 150px;
-    background-color: #333;
+    width: 300px;
+    height: 200px;
     border-radius: 5px;
     display: flex;
     align-items: flex-start;
@@ -44,7 +48,6 @@
 .paper {
     width: 50vw;
     height: 90vh;
-    background-color: #fff;
     padding: 8px;
     outline: 0;
     border-radius: 8px;
@@ -61,6 +64,10 @@
     text-align: center;
 }
 
+.title-area h2 {
+    font-family: var(--font-default);
+}
+
 .info-area {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -68,10 +75,14 @@
     text-align: center;
 }
 
+.info-area p {
+    font-family: var(--font-default);
+}
+
 .post-content {
     width: 95%;
     max-height: 200px;
     margin: 30px auto;
-    position: relative;
-    
+    position: relative;   
 }
+
