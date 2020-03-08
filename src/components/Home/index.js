@@ -7,6 +7,8 @@ import CardPostModal from '../Modals/CardPostModal'
 import element3 from '../../assets/img/rect3.png'
 import element2 from '../../assets/img/rect2.png'
 import element1 from '../../assets/img/rect1.png'
+import leftLogo from '../../assets/img/left-logo.png'
+
 import './styles.css'
 
 
@@ -27,11 +29,19 @@ class Home extends Component {
     return (
       <div>
         <div className='banner-intro'>
-          <div className='outro'></div>
+          <div className='left-logo'>
+            <img src={leftLogo} alt="" />
+          </div>
           <div className='rects'>
-            <img className='rect3' src={element3} alt='ele3'/>
-            <img className='rect2' src={element2} alt='ele2'/>
-            <img className='rect1' src={element1} alt='ele1'/>
+            <div className='rect3'>
+              <img src={element3} alt="" />
+            </div>
+            <div className='rect2'>
+              <img src={element2} alt="" />
+            </div>
+            <div className='rect1'>
+              <img src={element1} alt="" />
+            </div>
           </div>
         </div>
         <div className='title-grid'>

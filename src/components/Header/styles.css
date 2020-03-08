@@ -23,6 +23,7 @@ header.header {
     justify-content: center;
     align-items: center;
     flex: 1;
+    animation: moveLogoHeader 1000ms;
 }
 
 .header .logo-area .logo {
@@ -85,4 +86,13 @@ header.header {
     font-size: 13px;
     font-weight: bold;
     margin-left: 10px;
+}
+
+@keyframes moveLogoHeader {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
