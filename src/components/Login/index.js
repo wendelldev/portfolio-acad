@@ -21,8 +21,8 @@ const styles = () => ({
     },
     container: {
         display: 'flex',
-        marginTop: 180,
-        justifyContent: 'center'
+        marginTop: 140,
+        justifyContent: 'center',
     },
     card: {
         maxWidth: 300,

@@ -28,8 +28,8 @@
     position: absolute;
     bottom: 0px;
     left: 0px;  
-    width: 45%;
-    height: 80%;
+    width: 40%;
+    height: 75%;
     animation: moveLeftLogo 1700ms;
 }
 
@@ -110,11 +110,16 @@
     font-size: 13px;
 }
 
+.grid-posts {
+    min-height: 80vh;
+}
+
 .grid-posts .posts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    width: 940px;
+    width: 70%;
+    height: auto;
     margin: 20px auto;
     list-style-type: none;
 }
