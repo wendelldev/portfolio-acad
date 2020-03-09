@@ -20,7 +20,7 @@ function App () {
     return (
             <Router>
                 <Provider store={store}>
-                    <div className='body-root'>
+                    <div className='page-container'>
                         <Header />
                         <Routes />
                         <Footer />

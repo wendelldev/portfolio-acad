@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+.home-container {
+    width: 100%;
+    height: 100%;
+}
+
 .banner-intro {
     width: 100%;
     height: 80vh;
@@ -28,9 +33,45 @@
     position: absolute;
     bottom: 0px;
     left: 0px;  
-    width: 40%;
-    height: 75%;
+    width: 35%;
+    height: 70%;
+    -webkit-animation: moveLeftlogo 1700ms;
+    -moz-animation: moveLeftLogo 1700ms;
+    -o-animation: moveLeftLogo 1700ms;
     animation: moveLeftLogo 1700ms;
+}
+
+.line-intro {
+    position: absolute;
+    left: 20vw;
+    bottom: 20vh;
+    width: 0.1vw;
+    height: 40vh;
+    background-color: #fafafa;
+    -webkit-animation: moveLine 1400ms;
+    -moz-animation: moveLine 1400ms;
+    -o-animation: moveLine 1400ms;
+    animation: moveLine 1400ms;
+}
+
+.text-left {
+    position: absolute;
+    left: 21vw;
+    bottom: 28vh;
+    width: 25vw;
+    height: 23vh;
+    padding: 10px;
+}
+
+.text-left p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vh;
+    color: white;
+    line-height: 3.5vh;
+    -webkit-animation: textLeft 2000ms;
+    -moz-animation: textLeft 2000ms;
+    -o-animation: textLeft 2000ms;
+    animation: textLeft 2000ms;
 }
 
 .rects {
@@ -41,6 +82,9 @@
 
 .rect3 {
     position: absolute;
+    -webkit-animation: moveRect 600ms;
+    -moz-animation: moveRect 600ms;
+    -o-animation: moveRect 600ms;
     animation: moveRect 600ms;
     display: flex;
     align-items: flex-end;
@@ -57,6 +101,9 @@
 
 .rect2 {
     position: absolute;
+    -webkit-animation: moveRect 1100ms;
+    -moz-animation: moveRect 1100ms;
+    -o-animation: moveRect 1100ms;
     animation: moveRect 1100ms;
     display: flex;
     align-items: flex-end;
@@ -73,7 +120,10 @@
 
 .rect1 {
     position: absolute;
-    animation: moveRect 1700ms;
+    -webkit-animation: moveRect 1500ms;
+    -moz-animation: moveRect 1500ms;
+    -o-animation: moveRect 1500ms;
+    animation: moveRect 1500ms;
     display: flex;
     align-items: flex-end;
     bottom: 0px;
@@ -111,16 +161,12 @@
 }
 
 .grid-posts {
-    min-height: 80vh;
-}
-
-.grid-posts .posts {
+    margin: 20px auto;
+    margin-bottom: 20vh;
+    max-width: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    width: 70%;
-    height: auto;
-    margin: 20px auto;
     list-style-type: none;
 }
 
@@ -129,20 +175,56 @@
 }
 
 
+
 @keyframes moveRect {
     0% {
-        transform: translateX(200%) rotate(200deg);
+        transform: translateX(200%) translateY(-200%) rotate(200deg);
     }
     100% {
-        transform: translateX(0%)
+        transform: translateX(0%) translateY(0%)
     }
 }
 
 @keyframes moveLeftLogo {
     0% {
-        transform: translateX(-200%) translateY(200%);
+        transform: translateX(-200%);
     }
     100% {
-        transform: translateX(0%) translateX(0%);     
+        transform: translateX(0%);     
+    }
+}
+
+@keyframes moveLine {
+    0% {
+        transform: translateY(-200%)
+    }
+    100% {
+        transform: translateY(0%)
+    }
+}
+
+@keyframes textLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%)
+    }
+    50% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%)
     }
 }

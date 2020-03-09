@@ -23,14 +23,17 @@ class Home extends Component {
     dispatch(logoutUser());
   }
 
-
   render() {
     const { posts } = this.props
     return (
-      <div>
+      <div className='home-container'>
         <div className='banner-intro'>
           <div className='left-logo'>
             <img src={leftLogo} alt="" />
+            <div className='line-intro' />
+            <div className='text-left'>
+              <p>Este site tem como objetivo ser um portfólio digital, que foi atribúido aos alunos de Sistemas de Informação, na disciplina de Educação Interprofissional e Práticas Colaborativas.</p>
+            </div>
           </div>
           <div className='rects'>
             <div className='rect3'>
@@ -45,16 +48,14 @@ class Home extends Component {
           </div>
         </div>
         <div className='title-grid'>
-          <div className='line'></div>
+          <div className='line' />
           <h2>DIÁRIO DE CLASSE</h2>
-          <div className='line'></div>
+          <div className='line' />
         </div>
         <section className='grid-posts'>
-          <ul className='posts'>
             {posts.map(post => 
               <li key={post.id}><CardPostModal post={post} /></li>
             )}
-          </ul>
         </section>
       </div>
     );

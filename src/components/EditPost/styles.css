@@ -1,6 +1,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .form-post-edit {
@@ -8,8 +10,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 70%;
-    margin: 0 auto;
+    width: 150vh;
+    height: 100vh;
+    margin: 10vh auto 10vh auto;
 }
 
 .post-title-box {
@@ -48,8 +51,8 @@
 }
 
 .btn-box {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 30vh;
 }
 
 .btn.publish {

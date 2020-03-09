@@ -3,73 +3,14 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { loginUser } from '../../store/actions'
 import {
-    Card, CardContent, CardActions, TextField, Button, Avatar,
-    InputAdornment, withStyles, Typography, Container
+    CardActions, TextField, Button,
+    InputAdornment, Typography
 } from '@material-ui/core'
 import {
     AccountCircle, Lock, LockOutlined, Visibility, VisibilityOff
 } from '@material-ui/icons'
 
-
-const styles = () => ({
-    '@global': {
-        body: {
-            backgroundImage: "url('https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
-            backgroundSize: 'cover',
-            backgroundRepeat: 'repeat-y',
-        }
-    },
-    container: {
-        display: 'flex',
-        marginTop: 140,
-        justifyContent: 'center',
-    },
-    card: {
-        maxWidth: 300,
-        display: 'flex',
-        padding: 20,
-        flexDirection: 'column',
-        alignItems: 'center'
-    },
-    avatar: {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        backgroundColor: '#00bfff'
-    },
-    labelLogin: {
-        marginBottom: 5,
-        marginTop: 5,
-        textAlign: 'center',
-        'font-family': "'Roboto', sans-serif",
-        'font-size': 18
-    },
-    input: {
-        marginBottom: 20,
-        heigth: 30,
-    },
-    errorText: {
-        color: '#f50057',
-        marginBottom: 5,
-        textAlign: 'center'
-    },
-    submit: {
-        marginTop: 10,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        color: '#fff',
-        backgroundColor: '#00bfff',
-        '&:hover': {
-            backgroundColor: '#1e90ff'
-        }
-    },
-    icon: {
-        '&:hover': {
-            cursor: 'pointer'
-        }
-    }
-
-
-})
+import './styles.css'
 
 
 class Login extends React.Component {
@@ -97,71 +38,67 @@ class Login extends React.Component {
     } 
 
     render() {
-        const { classes, loginError, isAuthenticated } = this.props
+        const { loginError, isAuthenticated } = this.props
 
         if (isAuthenticated) {
             return <Redirect to='/' />
         } else {
             return (
-                <Container className={classes.container}>
-                    <Card className={classes.card}>
-                        <CardContent>
-                            <Avatar className={classes.avatar}>
-                                <LockOutlined />
-                            </Avatar>
-                            <Typography className={classes.labelLogin} component='h1' variant='h5'>
-                                LOGIN
+                <div className='container-login'>
+                    <div className='card-login'>
+                        <LockOutlined className='icon-avatar' />
+                        <h2 className='labelLogin' component='h1' variant='h5'>
+                            LOGIN
+                        </h2>
+                        <TextField
+                            className='input'
+                            id='email-input'
+                            label='Email'
+                            fullWidth
+                            onChange={this.handleEmailChange}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position='start'>
+                                        <AccountCircle />
+                                    </InputAdornment>
+                                ),
+                            }} />
+                        <TextField
+                            className='input'
+                            id='password'
+                            label='Password'
+                            type={this.state.hidden ? 'password' : 'text'}
+                            fullWidth
+                            onChange={this.handlePasswordChange}
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position='start'>
+                                        <Lock />
+                                    </InputAdornment>
+                                ),
+                                endAdornment: (
+                                    <InputAdornment position='end'>
+                                        {this.state.hidden ? <Visibility className='view-icon' onClick={this.handleHiddenPassword} /> 
+                                            : <VisibilityOff className='view-icon' onClick={this.handleHiddenPassword} />}
+                                    </InputAdornment>
+                                )
+                        }} />
+                        {loginError && (
+                            <Typography component='p' className='errorText'>
+                                Incorrect email or password.
                             </Typography>
-                            <TextField
-                                className={classes.input}
-                                id='email-input'
-                                label='Email'
-                                fullWidth
-                                onChange={this.handleEmailChange}
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position='start'>
-                                            <AccountCircle />
-                                        </InputAdornment>
-                                    ),
-                                }} />
-                            <TextField
-                                className={classes.input}
-                                id='password'
-                                label='Password'
-                                type={this.state.hidden ? 'password' : 'text'}
-                                fullWidth
-                                onChange={this.handlePasswordChange}
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position='start'>
-                                            <Lock />
-                                        </InputAdornment>
-                                    ),
-                                    endAdornment: (
-                                        <InputAdornment position='end'>
-                                            {this.state.hidden ? <Visibility className={classes.icon} onClick={this.handleHiddenPassword} /> 
-                                                : <VisibilityOff className={classes.icon} onClick={this.handleHiddenPassword} />}
-                                        </InputAdornment>
-                                    )
-                                }} />
-                                {loginError && (
-                                    <Typography component='p' className={classes.errorText}>
-                                        Incorrect email or password.
-                                    </Typography>
-                                )}
-                                <CardActions>
-                                    <Button
-                                        type='button'
-                                        variant='contained'
-                                        className={classes.submit}
-                                        onClick={this.handleSubmit}>
-                                            Login
-                                    </Button>
-                                </CardActions>
-                        </CardContent>
-                    </Card>
-                </Container>
+                        )}
+                        <CardActions>
+                            <Button
+                                type='button'
+                                variant='contained'
+                                className='submit'
+                                onClick={this.handleSubmit}>
+                                    Login
+                            </Button>
+                        </CardActions>
+                    </div>
+                </div>
             )
         }
     }
@@ -175,4 +112,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default withStyles(styles)(connect(mapStateToProps)(Login))
+export default connect(mapStateToProps)(Login)
