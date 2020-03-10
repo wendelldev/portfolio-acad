@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import Home from './components/Home'
 import Login from './components/Login'
 import EditPost from './components/EditPost'
+import About from './components/About'
 import PageNoAuth from './components/PageNoAuth'
 
 
@@ -16,6 +17,7 @@ function Routes(props) {
       {isAuthenticated ? <Route path='/edition' component={EditPost} /> : <Route path='/edition' component={Login} />}
       <Route exact path='/' component={Home} />
       <Route path='/login' component={Login} />
+      <Route path='/about' component={About} />
       <Route path='/noauth' component={PageNoAuth} />
     </Switch>
   )

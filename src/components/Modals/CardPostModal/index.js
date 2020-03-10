@@ -1,6 +1,5 @@
 import React from 'react'
 import {Modal, Backdrop, Fade} from '@material-ui/core'
-import {Markup} from 'interweave'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import './styles.css'
@@ -51,9 +50,7 @@ class CardPostModal extends React.Component {
                             <p className="date">{this.props.post.date.toLocaleString()}</p>
                             <p className="local">{this.props.post.local}</p>
                           </div>
-                          <div className='post-content'>
-                            <Markup content={this.props.post.contentPost} />
-                          </div>
+                          <div className='post-content' dangerouslySetInnerHTML={{__html: this.props.post.contentPost}} />
                         </PerfectScrollbar>
                        </section>
                     </Fade>

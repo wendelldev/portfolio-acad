@@ -11,7 +11,6 @@ import leftLogo from '../../assets/img/left-logo.png'
 
 import './styles.css'
 
-
 class Home extends Component {
 
   componentDidMount = () => {
@@ -32,7 +31,7 @@ class Home extends Component {
             <img src={leftLogo} alt="" />
             <div className='line-intro' />
             <div className='text-left'>
-              <p>Este site tem como objetivo ser um portfólio digital, que foi atribúido aos alunos de Sistemas de Informação, na disciplina de Educação Interprofissional e Práticas Colaborativas.</p>
+              <p className='text'>Este site tem como objetivo ser um portfólio digital, que foi atribúido aos alunos de Sistemas de Informação, na disciplina de Educação Interprofissional e Práticas Colaborativas.</p>
             </div>
           </div>
           <div className='rects'>
@@ -45,6 +44,7 @@ class Home extends Component {
             <div className='rect1'>
               <img src={element1} alt="" />
             </div>
+            <p className='text'>A ideia é unir o útil ao agradável, ganhando pontos na criatividade e apresentação. E ao mesmo tempo, ganhando experiência em uma das áreas que amo, a programação.</p>
           </div>
         </div>
         <div className='title-grid'>

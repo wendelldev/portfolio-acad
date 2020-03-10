@@ -10,9 +10,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150vh;
-    height: 100vh;
-    margin: 10vh auto 10vh auto;
+    width: 60%;
+    height: 100%;
+    margin: 50px auto;
 }
 
 .post-title-box {
@@ -52,7 +52,7 @@
 
 .btn-box {
     margin-top: 50px;
-    margin-bottom: 30vh;
+    margin-bottom: 100px;
 }
 
 .btn.publish {

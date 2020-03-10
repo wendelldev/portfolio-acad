@@ -1,6 +1,5 @@
 import React from 'react'
 import { Modal, Backdrop, Fade, Button} from '@material-ui/core'
-import Interweave from 'interweave'
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import './styles.css'
@@ -53,9 +52,7 @@ class ButtonModal extends React.Component {
                             <p className="date">{this.props.date}</p>
                             <p className="local">{this.props.local}</p>
                           </div>
-                          <div className='post-content'>
-                            <Interweave content={this.props.content} />
-                          </div>
+                          <div className='post-content' dangerouslySetInnerHTML={{__html: this.props.content}} />
                         </PerfectScrollbar>
                        </section>
                     </Fade>

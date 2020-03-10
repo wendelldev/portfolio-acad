@@ -8,7 +8,6 @@ import { addPost } from '../../store/actions'
 
 import { Redirect } from 'react-router-dom'
 
-
 import {
     TextField, Grid, Button, InputLabel, MenuItem, FormControl, Select
 } from '@material-ui/core'
@@ -236,6 +235,7 @@ class EditPost extends React.Component {
                                 content={this.state.postContent} />
                         </Grid>
                     </div>
+
                 )
             }
         }

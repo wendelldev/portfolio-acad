@@ -47,7 +47,7 @@
     bottom: 20vh;
     width: 0.1vw;
     height: 40vh;
-    background-color: #fafafa;
+    background-color: #cecccc;
     -webkit-animation: moveLine 1400ms;
     -moz-animation: moveLine 1400ms;
     -o-animation: moveLine 1400ms;
@@ -56,22 +56,41 @@
 
 .text-left {
     position: absolute;
-    left: 21vw;
+    left: 22vw;
     bottom: 28vh;
     width: 25vw;
     height: 23vh;
     padding: 10px;
 }
 
-.text-left p {
+.text-left .text {
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 2.5vh;
-    color: white;
+    text-align: left;
+    color: #fff;
     line-height: 3.5vh;
-    -webkit-animation: textLeft 2000ms;
-    -moz-animation: textLeft 2000ms;
-    -o-animation: textLeft 2000ms;
-    animation: textLeft 2000ms;
+    -webkit-animation: textLeft 2s;
+    -moz-animation: textLeft 2s;
+    -o-animation: textLeft 2s;
+    animation: textLeft 2s;
+}
+
+.rects .text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.5vh;
+    text-align: left;
+    color: #fff;
+    line-height: 3.5vh;
+    position: absolute;
+    right: 5vw;
+    left: 16vw;
+    bottom: 33vh;
+    -webkit-animation: textRight 2000ms;
+    -moz-animation: textRight 2000ms;
+    -o-animation: textRight 2000ms;
+    animation: textRight 2000ms;
 }
 
 .rects {
@@ -120,10 +139,10 @@
 
 .rect1 {
     position: absolute;
-    -webkit-animation: moveRect 1500ms;
-    -moz-animation: moveRect 1500ms;
-    -o-animation: moveRect 1500ms;
-    animation: moveRect 1500ms;
+    -webkit-animation: moveRect 1400ms;
+    -moz-animation: moveRect 1400ms;
+    -o-animation: moveRect 1400ms;
+    animation: moveRect 1400ms;
     display: flex;
     align-items: flex-end;
     bottom: 0px;
@@ -211,20 +230,24 @@
     50% {
         opacity: 0;
     }
-    70% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 1;
-    }
-    80% {
-        opacity: 1;
-    }
-    90% {
+    55% {
         opacity: 1;
     }
     100% {
         opacity: 1;
+        transform: translateX(0%)
+    }
+}
+
+@keyframes textRight {
+    0% {
+        opacity: 0;
+        transform: translateX(200%)
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
         transform: translateX(0%)
     }
 }
