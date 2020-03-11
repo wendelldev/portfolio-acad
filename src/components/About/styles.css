@@ -7,8 +7,9 @@
     width: 100%;
     height: 80vh;
     background-size: 100% auto;
-    background-position: 0 -100px;
+    background-position: 0 -200px;
     background-repeat: no-repeat;
+    image-rendering: optimizeSpeed;
     position: relative;
     display: flex;
 }

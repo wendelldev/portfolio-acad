@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-import imgAbout from '../../assets/img/image-about.jpg'
+import imgAbout from '../../assets/img/img-about.png'
 import './styles.css'
 
 
