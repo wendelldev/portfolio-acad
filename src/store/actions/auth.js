@@ -149,11 +149,15 @@ export const verifyAuth = () => dispatch => {
 export const addPost = post => {
     return dispatch => {
         dispatch(creatingPost())
-        axios.post('/posts.json', { ...post })
+        myFirebase.auth().currentUser.getIdTokenResult()
             .catch(err => console.log(err))
-            .then(res => {
-                dispatch(fetchPosts())
-                dispatch(postCreated())
+            .then(user => {
+                axios.post(`/posts.json?auth=${user.token}`, { ...post })
+                    .catch(err => console.log(err))
+                    .then(res => {
+                        dispatch(fetchPosts())
+                        dispatch(postCreated())
+                })
             })
     }
 }
