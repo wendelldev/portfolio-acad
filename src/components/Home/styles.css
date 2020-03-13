@@ -20,7 +20,7 @@
     background-color: #233c62;
     position: relative;
     margin-top: 60px;
-    display: flex   ;
+    display: flex;
 }
 
 .left-logo {
@@ -249,5 +249,191 @@
     }
     100% {
         transform: translateX(0%)
+    }
+}
+
+/* MEDIA TELA ATE 400 PX SMATHPHONE */
+
+@media (max-width: 520px) {
+    .banner-intro {
+        width: 100vw;
+        height: 60vh;
+        flex-direction: column;
+    }
+    .left-logo img, .left-logo .line-intro {
+        display: none;
+    }
+    .rect1, .rect2, .rect3 {
+        display: none;
+    }
+
+    .text-left {
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
+    .rects, .left-logo {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+
+    }
+    .rects .text {
+        position: static;
+        padding: 10px;
+        text-align: justify;
+        margin-bottom: 10px;
+    }
+    .text-left .text {
+        position: static;
+        text-align: justify;
+        margin-top: 20px;
+    }
+    .line {
+        width: 20vw;
+    }
+    .title-grid h2 {
+        font-size: 1.5vh;
+    }
+    .grid-posts {
+        max-width: 70%;
+        grid-template-columns: 1fr;
+    }
+
+
+
+
+    @keyframes textLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-200%)
+        }
+        60% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0%)
+        }
+    }
+}
+
+
+@media (min-width: 521px) and (max-width: 720px) {
+    .banner-intro {
+        width: 100vw;
+        height: 60vh;
+        flex-direction: column;
+    }
+    .left-logo img, .left-logo .line-intro {
+        display: none;
+    }
+    .rect1, .rect2, .rect3 {
+        display: none;
+    }
+
+    .text-left {
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
+    .rects, .left-logo {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+
+    }
+    .rects .text {
+        position: static;
+        padding: 10px;
+        text-align: justify;
+        margin-bottom: 10px;
+    }
+    .text-left .text {
+        position: static;
+        text-align: justify;
+        margin-top: 20px;
+    }
+    .line {
+        width: 20vw;
+    }
+    .title-grid h2 {
+        font-size: 1.5vh;
+    }
+    .grid-posts {
+        max-width: 70%;
+        grid-template-columns: 1fr;
+    }
+
+
+
+
+    @keyframes textLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-200%)
+        }
+        60% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0%)
+        }
+    }
+}
+
+@media (min-width: 650px) and (max-width: 1160px) {
+    .grid-posts {
+        width: 70%;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1150px) {
+    .banner-intro {
+        height: 70vh;
+    }
+    .left-logo {
+        height: 70vh;
+    }
+    .left-logo img {
+        width: 40%;
+        height: 60%;
+    }
+    .line-intro {
+        height: 30vh;
+        left: 22vw;
+        bottom: 15vh;
+        width: 0.2vw;
+    }
+    .text-left {
+        bottom: 21vh;
+        left: 24vw;
+        width: 26vw;
+    }
+    .text-left .text {
+        font-size: 2vh;
+        
+    }
+    .rects .text {
+        font-size: 2vh;
+        bottom: 25vh;
+        right: 3vw;
+        left: 18vw;
+    }
+    .rects {
+        width: 47%;
+        height: 70vh;
+    }
+
+}
+
+@media (min-width: 996px) and (max-width: 1150px) {
+    .text-left {
+        bottom: 19vh;
+    }
+    .rects .text {
+        bottom: 28vh;
     }
 }
