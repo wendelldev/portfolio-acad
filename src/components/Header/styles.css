@@ -13,7 +13,7 @@ header.header {
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.75);
     position: fixed;
     top: 0%;
-    z-index: 10;
+    z-index: 1;
 }
 
 .header .logo-area {
@@ -186,4 +186,16 @@ header.header {
     100% {
         transform: translateX(0%);
     }
+}
+
+@media (max-width: 405px) {
+  .logo-link .logo-name {
+    display: none;
+  }
+  .header .nav-area .link {
+    padding: 5px 0px;
+  }
+  .btn-logout {
+    margin-right: 10px;
+  }
 }

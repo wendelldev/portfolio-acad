@@ -15,8 +15,8 @@
 }
 
 .card-login {
-    width: 20vw;
-    height: 45vh;
+    width: 26%;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,23 +41,23 @@
 }
 
 .input {
-    margin: 2vh auto !important;
+    margin: 5vh auto !important;
     height: 4vh !important;
 }
 
 .input label {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 1vw !important;
+    font-size: 2.5vh !important;
 }
 
 .input .MuiInputBase-input {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 1vw !important;
+    font-size: 2.5vh !important;
 }
 
 .input .MuiInputAdornment-root svg {
-    width: 1vw;
-    height: 2vh;
+    width: 1.5vw;
+    height: 2.5vh;
 }
 
 .errorText {
@@ -82,3 +82,58 @@
     cursor: pointer;
 }
 
+@media (max-width: 920px) {
+    .card-login {
+        width: 80%;
+    }
+    .icon-avatar {
+        display: none !important;
+    }
+    .labelLogin {
+        font-size: 2vh;
+    }
+    .input {
+        height: 6vh !important;
+    }
+    .input label {
+        font-size: 2vh !important;
+    }
+    .input .MuiInputBase-input {
+        font-size: 2.3vh !important;
+    }
+    .input .MuiInputAdornment-root svg {
+        width: 4vw;
+        height: 2vh;
+    }
+}
+
+@media (max-width: 350px) {
+    .card-login {
+        width: 80%;
+    }
+    .icon-avatar {
+        display: none !important;
+    }
+    .labelLogin {
+        font-size: 2vh;
+    }
+    .input {
+        height: 6vh !important;
+    }
+    .input label {
+        font-size: 2vh !important;
+    }
+    .input .MuiInputBase-input {
+        font-size: 2vh !important;
+    }
+    .input .MuiInputAdornment-root svg {
+        width: 4vw;
+        height: 2vh;
+    }
+}
+
+@media (min-width: 510px) and (max-width: 920px) {
+    .card-login {
+        width: 45%;
+    }
+}

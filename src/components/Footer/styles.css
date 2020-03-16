@@ -48,8 +48,8 @@ footer {
     footer {
         height: 60px;
     }
-    .footer-text {
-        font-size: 1.8vh;
+    footer .footer-text {
+        font-size: 1.4vh;
     }
 }
 
